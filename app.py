@@ -1,5 +1,9 @@
+import os
 import streamlit as st
 from dotenv import load_dotenv
+
+load_dotenv()  # ← this line must be here before anything else
+
 from groq import Groq
 import PyPDF2
 import extra_streamlit_components as stx
@@ -8,8 +12,6 @@ import re
 from dashboard import render_dashboard
 from jobs import fetch_malaysia_jobs
 
-# ── Setup ──────────────────────────────────────────────────────────────────
-load_dotenv()
 client = Groq()
 cookie_manager = stx.CookieManager()
 
